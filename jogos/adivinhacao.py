@@ -8,8 +8,8 @@ total_tentativas = 3
 
 while rodada <= total_tentativas:
 
-    chute = int(input('Digite o seu número: '))
-    print('Tentativa:', rodada, 'de', total_tentativas)
+    chute = int(input('\nDigite o seu número: '))
+    print('Tentativa {} de {}'.format(rodada, total_tentativas))
     print('Seu número é: ', chute)
 
     if chute == numero_secreto:
@@ -22,4 +22,4 @@ while rodada <= total_tentativas:
 
     rodada = rodada + 1
 
-print('Fim de Jogo!')
+print('\nFim de Jogo!')
