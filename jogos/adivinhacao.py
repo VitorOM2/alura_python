@@ -4,8 +4,16 @@ print('=================================')
 print('Bem vindo ao jogo de Adivinhação!')
 print('=================================')
 
-numero_secreto = random.randrange(1, 101)
-total_tentativas = 3
+numero_secreto   = random.randrange(1, 101)
+total_tentativas = 0
+dificuldade = int(input('Escolha a dificuldade (1)Fácil (2)Médio (3)Difícil: '))
+
+if dificuldade       == 1:
+    total_tentativas = 10
+elif dificuldade     == 2:
+    total_tentativas = 5
+elif dificuldade     == 3:
+    total_tentativas = 3
 
 for rodada in range(1, total_tentativas + 1):
 
