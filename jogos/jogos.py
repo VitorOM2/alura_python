@@ -5,7 +5,9 @@ print("====================")
 print("   Escolha o jogo   ")
 print("====================")
 
-jogo = int(input("\n(1) Adivinhação (2) Forca"))
+print("\n(1) Adivinhação (2) Forca")
+
+jogo = int(input("Qual jogo? "))
 
 if jogo == 1:
     adivinhacao.jogar()
