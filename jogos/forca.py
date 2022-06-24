@@ -7,6 +7,7 @@ def jogar():
     letras_certas = ["_", "_", "_", "_", "_", "_"]
     enforcou = False
     ganhou   = False
+    erros    = 0
 
     print(letras_certas)
 
@@ -14,13 +15,18 @@ def jogar():
         chute = input("Qual letra? ").strip()
         index = 0
 
-        for letra in palavra_secreta:  # Loop para iterar a string
-            if chute.upper() == letra.upper():
-                letras_certas[index] = letra
-            index = index + 1  # Acrescenta uma posição no index para cada letra
+        if chute not in palavra_secreta:
+            erros += 1
+        else:
+            for letra in palavra_secreta:  # Loop para iterar a string
+                if chute.upper() == letra.upper():
+                    letras_certas[index] = letra
+                index = index + 1  # Acrescenta uma posição no index para cada letra
 
+        enforcou = erros == 6
         print(letras_certas)
 
+    print("Fim de jogo")
 
 if __name__ == "__main__":
     jogar()
