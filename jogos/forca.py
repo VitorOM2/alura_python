@@ -6,8 +6,8 @@ def jogar():
     palavra_secreta = "banana".upper()
     letras_certas = ["_", "_", "_", "_", "_", "_"]
     enforcou = False
-    ganhou   = False
-    erros    = 0
+    ganhou = False
+    erros = 0
 
     print(letras_certas)
 
@@ -24,9 +24,15 @@ def jogar():
                 index += 1  # Acrescenta uma posição no index para cada letra
 
         enforcou = erros == 6
+        ganhou = "_" not in letras_certas
         print(letras_certas)
 
+    if ganhou:
+        print("Você ganhou!")
+    else:
+        print("Você perdeu!")
     print("Fim de jogo")
+
 
 if __name__ == "__main__":
     jogar()
