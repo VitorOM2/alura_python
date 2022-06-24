@@ -17,6 +17,7 @@ def jogar():
 
         if chute not in palavra_secreta:
             erros += 1
+            print("Ops, você errou! Faltam {} tentativas.".format(6 - erros))
         else:
             for letra in palavra_secreta:  # Loop para iterar a string
                 if chute == letra:
