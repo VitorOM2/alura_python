@@ -1,6 +1,6 @@
 class Conta:
 
-    def __int__(self, numero, titular, saldo, limite):
+    def __init__(self, numero, titular, saldo, limite):
         self.__numero  = numero
         self.__titular = titular
         self.__saldo   = saldo
