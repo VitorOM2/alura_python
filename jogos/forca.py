@@ -106,43 +106,43 @@ def desenha_forca(erros):
     print("  _______     ")
     print(" |/      |    ")
 
-    if erros == 1:
+    if(erros == 1):
         print(" |      (_)   ")
         print(" |            ")
         print(" |            ")
         print(" |            ")
 
-    if erros == 2:
+    if(erros == 2):
         print(" |      (_)   ")
         print(" |      \     ")
         print(" |            ")
         print(" |            ")
 
-    if erros == 3:
+    if(erros == 3):
         print(" |      (_)   ")
         print(" |      \|    ")
         print(" |            ")
         print(" |            ")
 
-    if erros == 4:
+    if(erros == 4):
         print(" |      (_)   ")
         print(" |      \|/   ")
         print(" |            ")
         print(" |            ")
 
-    if erros == 5:
+    if(erros == 5):
         print(" |      (_)   ")
         print(" |      \|/   ")
         print(" |       |    ")
         print(" |            ")
 
-    if erros == 6:
+    if(erros == 6):
         print(" |      (_)   ")
         print(" |      \|/   ")
         print(" |       |    ")
         print(" |      /     ")
 
-    if erros == 7:
+    if (erros == 7):
         print(" |      (_)   ")
         print(" |      \|/   ")
         print(" |       |    ")
