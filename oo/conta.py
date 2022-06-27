@@ -12,14 +12,21 @@ class Conta:
     def depositar(self, valor):
         self.__saldo += valor
 
+    def __poder_sacar(self, valor):
+        valor_disponivel = self.saldo + self.limite
+        return valor <= valor_disponivel
+
     def sacar(self, valor):
-        self.__saldo -= valor
+        if self.__poder_sacar(valor):
+            self.__saldo -= valor
+        else:
+            print("O valor {} passou o limite".format(valor))
 
     def transferir(self, valor, destino):
         self.sacar(valor)
         destino.depositar(valor)
 
-    # ========== Getters ===============
+    # =============== Getters ===============
     @property
     def saldo(self):
         return self.__saldo
@@ -32,7 +39,16 @@ class Conta:
     def limite(self):
         return self.__limite
 
-    # ========== Setters ===============
+    # =============== Setters ===============
     @limite.setter
     def limite(self, limite):
         self.__limite = limite
+
+    # =============== Estáticos ==============
+    @staticmethod
+    def codigo_banco():
+        return "001"
+
+    @staticmethod
+    def codigos_bancos():
+        return {'BB': '001', 'Caixa': '104', 'Bradesco': '237'}
