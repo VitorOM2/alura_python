@@ -51,6 +51,7 @@ class Playlist:
         self.nome = nome
         self.programas = programas
 
+    # =============== GETTERS ===============
     @property
     def listagem(self):
         return self.programas
