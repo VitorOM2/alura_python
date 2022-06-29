@@ -1,5 +1,5 @@
 class Programa():
-    def __init__(self,nome, ano):
+    def __init__(self, nome, ano):
         self._nome = nome
         self.ano   = ano
         self._like = 0
@@ -22,11 +22,18 @@ class Programa():
     def dar_likes(self):
         self._like += 1
 
+    def __str__(self):
+        return f'Nome: {self.nome} Likes: {self._like}'
+
 
 class Filme(Programa):
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano)
         self.duracao = duracao
+
+    def __str__(self):
+        return f'\nNome: {self._nome} \nAno: {self.ano}' \
+               f'\nDuração: {self.duracao} min  \nLikes: {self._like}'
 
 
 class Serie(Programa):
@@ -34,9 +41,18 @@ class Serie(Programa):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
+    def __str__(self):
+        return f'\nNome: {self._nome} \nAno: {self.ano}' \
+               f'\nDuração: {self.temporadas} temporadas  \nLikes: {self._like}'
+
 
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
-print(f'{vingadores.nome} - {vingadores.ano} - {vingadores.duracao} - {vingadores.like}')
-
+vingadores.dar_likes()
 himym = Serie('how i met your mother', 2005, 9)
-print(f'\nSérie: {himym.nome} \nAno de lançamento: {himym.ano} \nTemporadas: {himym.temporadas} - {himym.like}')
+himym.dar_likes()
+himym.dar_likes()
+
+lista = [vingadores, himym]
+
+for programa in lista:
+    print(programa)
