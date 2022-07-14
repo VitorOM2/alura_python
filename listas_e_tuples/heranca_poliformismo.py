@@ -26,9 +26,16 @@ class ContaCorrente(Conta):
 
 conta2 = ContaCorrente(2)
 conta3 = ContaPoupanca(3)
+contas = (conta2, conta3)
 
 conta2.deposita(500)
 conta3.deposita(500)
+
+print(conta2)
+print(conta3)
+
+for conta in contas:
+    conta.passa_o_mes() # Duck typing
 
 print(conta2)
 print(conta3)
