@@ -2,10 +2,21 @@ import re
 
 
 class ExtratorURL:
+
     def __init__(self, url):
         """Salva a url em um atributo do objeto (self.url = url) e verifica se a url é válida"""
         self.url = self.sanitiza_url(url)
         self.valida_url()
+
+    def __len__(self):
+        return len(self.url)
+
+    def __str__(self):
+        return self.url + "\nURL: " + self.get_url_base() +\
+                          "\nParâmetros: " + self.get_url_parametros()
+
+    def __eq__(self, other):
+        return self.url == other.url
 
     def sanitiza_url(self, url):
         """Retorna a url removendo espaços em branco."""
@@ -30,7 +41,6 @@ class ExtratorURL:
         url_base = self.url[:indice_interrogacao]
         return url_base
 
-
     def get_url_parametros(self):
         """Retorna os parâmetros da url."""
         indice_interrogacao = self.url.find('?')
@@ -48,19 +58,22 @@ class ExtratorURL:
             valor = self.get_url_parametros()[indice_valor:indice_e_comercial]
         return valor
 
-    def __len__(self):
-        return len(self.url)
+    def converte(self, cotacao, moeda_origem, moeda_destino, quantidade):
+        if moeda_origem == "dolar" and moeda_destino == "real":
+            return f"Valor convertido: {quantidade * cotacao:.2f}"
+        elif moeda_origem == "real" and moeda_destino == "dolar":
+            return f"Valor convertido: {quantidade / cotacao:.2f}"
+        elif moeda_origem == moeda_destino:
+            return cotacao
+        else:
+            return "Erro, escolha uma opção válida"
 
-    def __str__(self):
-        return self.url + "\nURL: " + self.get_url_base() +\
-                          "\nParâmetros: " + self.get_url_parametros()
 
-    def __eq__(self, other):
-        return self.url == other.url
+url = "bytebank.com/cambio?quantidade=8&moedaOrigem=dolar&moedaDestino=real"
+extrator_url    = ExtratorURL(url)
+cotacao         = 5.50
+moeda_origem    = extrator_url.get_valor_parametro('moedaOrigem')
+moeda_destino   = extrator_url.get_valor_parametro('moedaDestino')
+quantidade      = float(extrator_url.get_valor_parametro('quantidade'))
 
-url = "bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar"
-extrator_url  = ExtratorURL(url)
-extrator_url2 = ExtratorURL(url)
-
-print(extrator_url)
-print(extrator_url == extrator_url2)
+print(extrator_url.converte(cotacao, moeda_origem, moeda_destino, quantidade))
