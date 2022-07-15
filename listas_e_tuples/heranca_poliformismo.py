@@ -1,7 +1,9 @@
 import array as arr
+from functools import total_ordering
 from abc import ABCMeta, abstractmethod
 
 
+@total_ordering
 class Conta:
 
     def __init__(self, codigo):
@@ -15,6 +17,11 @@ class Conta:
         if type(other) != type(self):
             return False
         return self._codigo == other._codigo
+
+    def __lt__(self, other):
+        if self._codigo != other._codigo:
+            return self._codigo < other._codigo
+        return self._saldo < other._saldo
 
     @abstractmethod
     def passa_o_mes(self):
