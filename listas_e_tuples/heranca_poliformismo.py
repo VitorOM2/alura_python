@@ -11,6 +11,11 @@ class Conta:
     def __str__(self):
         return f"\n>> Código: {self._codigo}\n>> Saldo: {self._saldo}"
 
+    def __eq__(self, other):
+        if type(other) != type(self):
+            return False
+        return self._codigo == other._codigo
+
     @abstractmethod
     def passa_o_mes(self):
         raise NotImplemented
@@ -37,6 +42,7 @@ array = arr.array('d', [1, 3.5])
 
 conta2 = ContaCorrente(2)
 conta3 = ContaPoupanca(3)
+conta4 = ContaPoupanca(4)
 contas = (conta2, conta3)
 
 conta2.deposita(500)
@@ -50,3 +56,5 @@ for conta in contas:
 
 print(conta2)
 print(conta3)
+
+print(conta2 == conta3)
