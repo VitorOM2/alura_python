@@ -40,10 +40,17 @@ class ContaCorrente(Conta):
 
 array = arr.array('d', [1, 3.5])
 
-conta2 = ContaCorrente(2)
-conta3 = ContaPoupanca(3)
-conta4 = ContaPoupanca(4)
-contas = (conta2, conta3)
+conta2      = ContaCorrente(2)
+conta3      = ContaPoupanca(3)
+conta4      = ContaPoupanca(4)
+contas      = (conta2, conta3)
+usuarios    = [
+    ("Guilherme", 37, 1981),
+    ("Daniela", 31, 1987),
+    ("Paulo", 39, 1979)
+]
+idades = (18, 25, 29, 36)
+
 
 conta2.deposita(500)
 conta3.deposita(500)
@@ -58,3 +65,10 @@ print(conta2)
 print(conta3)
 
 print(conta2 == conta3)
+
+for nome, idade, nascimento in usuarios:
+    print(f"\n>> Nome: {nome}")
+
+for indice, idade in enumerate(idades):
+    print(f"\n>> Indice: {indice} >> Idade: {idade}")
+
