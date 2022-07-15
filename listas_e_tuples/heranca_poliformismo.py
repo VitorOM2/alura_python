@@ -63,6 +63,7 @@ for conta in contas:
 
 print(conta2)
 print(conta3)
+print(sorted(idades))
 
 print(conta2 == conta3)
 
