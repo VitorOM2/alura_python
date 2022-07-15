@@ -1,11 +1,20 @@
+import array as arr
+from abc import ABCMeta, abstractmethod
+
+
 class Conta:
 
     def __init__(self, codigo):
         self._codigo = codigo
-        self._saldo  = 0
+        self._saldo = 0
 
     def __str__(self):
         return f"\n>> Código: {self._codigo}\n>> Saldo: {self._saldo}"
+
+    @abstractmethod
+    def passa_o_mes(self):
+        raise NotImplemented
+        pass
 
     def deposita(self, valor):
         self._saldo += valor
@@ -35,7 +44,7 @@ print(conta2)
 print(conta3)
 
 for conta in contas:
-    conta.passa_o_mes() # Duck typing
+    conta.passa_o_mes()  # Duck typing
 
 print(conta2)
 print(conta3)
