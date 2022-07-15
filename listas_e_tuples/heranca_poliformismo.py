@@ -33,6 +33,8 @@ class ContaCorrente(Conta):
         self._saldo -= 2
 
 
+array = arr.array('d', [1, 3.5])
+
 conta2 = ContaCorrente(2)
 conta3 = ContaPoupanca(3)
 contas = (conta2, conta3)
