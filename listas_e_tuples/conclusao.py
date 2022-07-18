@@ -64,14 +64,15 @@ def analisa_frequencia(texto):
     aparicoes = Counter(texto.lower())  # Conta todas as letras
     total_caracteres = sum(aparicoes.values())  # Soma todos os caracteres
 
-    proporcoes = [(letra, frequencia / total_caracteres * 100)
+    proporcoes = [(letra, frequencia / total_caracteres * 100)  # Cria uma lista
                   for letra, frequencia in aparicoes.items()]
 
-    proporcoes = Counter(dict(proporcoes))  # Transforma em dict
-    mais_comuns = proporcoes.most_common(10)
+    proporcoes = Counter(dict(proporcoes))  # Organiza o dict
+    mais_comuns = proporcoes.most_common(10)  # Pega as mais comuns
 
     for caractere, proporcao in mais_comuns:  # Imprime
         print(f"\n{caractere} = {proporcao:.2f}%")
+
 
 analisa_frequencia(texto1)
 print("\n")
