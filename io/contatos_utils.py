@@ -26,3 +26,10 @@ def contatos_para_pickle(contatos, caminho):
         pickle.dump(contatos, arquivo)
         
     return contatos
+
+def contatos_para_json(contatos, caminho):
+    with open(contatos, caminho) as arquivo:
+        json.dump(contatos, arquivo, default=_contato_para_json)
+
+def _contato_para_json(contato):
+    return contato.__dict__
