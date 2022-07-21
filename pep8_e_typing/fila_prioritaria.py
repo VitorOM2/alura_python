@@ -27,6 +27,8 @@ class FilaPrioritaria:
         if flag != 'detail':
             estatistica = {f'{agencia} - {dia}': len(self.clientes_atendidos)}
         else:
-            estatistica = {'dia': dia, 'agencia': agencia, 'clientes atendidos': self.clientes_atendidos,
-                           'quantidade de clientes atendidos': len(self.clientes_atendidos)}
+            estatistica = {'dia': dia, 'agencia': agencia,
+                           'clientes atendidos': self.clientes_atendidos,
+                           'quantidade de clientes atendidos':
+                               len(self.clientes_atendidos)}
         return estatistica
