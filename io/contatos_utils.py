@@ -14,3 +14,9 @@ def csv_para_contatos(caminho, encoding='latin_1'):
             contatos.append(contato)
     
     return contatos
+
+def pickle_para_contatos(caminho):
+    with open(caminho, mode='rb') as arquivo:
+        contatos = pickle.load(arquivo)
+        
+    return contatos
