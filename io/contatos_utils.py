@@ -20,3 +20,9 @@ def pickle_para_contatos(caminho):
         contatos = pickle.load(arquivo)
         
     return contatos
+
+def contatos_para_pickle(contatos, caminho):
+    with open(caminho, mode='wb') as arquivo:
+        pickle.dump(contatos, arquivo)
+        
+    return contatos
