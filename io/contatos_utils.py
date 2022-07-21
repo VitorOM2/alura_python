@@ -16,24 +16,11 @@ def csv_para_contatos(caminho, encoding='latin_1'):
 
     return contatos
 
-
-def contatos_para_pickle(contatos, caminho):
-    with open(caminho, mode='wb') as arquivo:
-        pickle.dump(contatos, arquivo)
-
 def pickle_para_contatos(caminho):
     with open(caminho, mode='rb') as arquivo:
         contatos = pickle.load(arquivo)
 
     return contatos
-
-
-def contatos_para_json(contatos, caminho):
-    with open(caminho, mode='w') as arquivo:
-        json.dump(contatos, arquivo, default=_contato_para_json)
-
-def _contato_para_json(contato):
-    return contato.__dict__
 
 def json_para_contatos(caminho):
     contatos = []
@@ -46,3 +33,14 @@ def json_para_contatos(caminho):
             contatos.append(c)
 
     return contatos
+
+def contatos_para_pickle(contatos, caminho):
+    with open(caminho, mode='wb') as arquivo:
+        pickle.dump(contatos, arquivo)
+
+def contatos_para_json(contatos, caminho):
+    with open(caminho, mode='w') as arquivo:
+        json.dump(contatos, arquivo, default=_contato_para_json)
+
+def _contato_para_json(contato):
+    return contato.__dict__
