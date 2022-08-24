@@ -11,7 +11,7 @@ class TestClass:
 
         assert resultado == esperado  # Then - Desfecho
 
-    def test_quando_sobrenome_recebe_charles_xavier_deve_retornar_xavier(self) -> None :
+    def test_quando_sobrenome_recebe_charles_xavier_deve_retornar_xavier(self) -> None:
 
         entrada: str = 'Charles Xavier'  # Given - Contexto
         esperado: str = 'Xavier'
@@ -20,7 +20,7 @@ class TestClass:
 
         assert resultado == esperado
 
-    def test_quando_decrescimo_salario_recebe_100000_deve_retornar_90000(self) -> None :
+    def test_quando_decrescimo_salario_recebe_100000_deve_retornar_90000(self) -> None:
         entrada_salario: float = 100000
         entrada_nome: str = 'Paulo Bragança'
         esperado: float = 90000
