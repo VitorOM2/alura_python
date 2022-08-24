@@ -16,9 +16,9 @@ class Funcionario:
         return self._salario
 
     def idade(self) -> int:
-        data_nasciemnto_quebrada = self._data_nascimento.split('/')
-        ano_nascimento = data_nasciemnto_quebrada[-1]
-        ano_atual = date.today().year
+        data_nascimento_quebrada: list = self._data_nascimento.split('/')
+        ano_nascimento: str = data_nascimento_quebrada[-1]
+        ano_atual: int = date.today().year
         return ano_atual - int(ano_nascimento)
 
     def sobrenome(self) -> str:
