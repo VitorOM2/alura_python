@@ -32,7 +32,7 @@ class Funcionario:
 
         return self._salario >= 100000 and self.sobrenome() in sobrenomes
 
-    def decrescimo_salario(self):
+    def decrescimo_salario(self) -> None:
         if self._eh_socio():
             decrescimo = self._salario - (self.salario * 0.1)
             self._salario = decrescimo
