@@ -4,6 +4,7 @@ import pytest
 
 from pytest import mark
 
+
 class TestClass:
 
     def test_quando_idade_recebe_13_03_2000_deve_retornar_22(self) -> None:
