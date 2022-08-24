@@ -25,7 +25,7 @@ class Funcionario:
         nome_completo: str = self.nome.strip()
         nome_quebrado: str = nome_completo.split(' ')
         return  nome_quebrado[-1]
-
+       
     def _eh_socio(self) -> bool:
         sobrenomes: list = ['Bragança', 'Windsor', 'Bourbon', 'Yamato',
                             'Al Saud', 'Khan', 'Tudor', 'Ptolomeu']

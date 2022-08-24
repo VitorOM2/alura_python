@@ -12,6 +12,9 @@ class TestClass:
         assert resultado == esperado  # Then - Desfecho
 
     def test_quando_sobrenome_recebe_charles_xavier_deve_retornar_xavier(self) -> None :
+    
+    def test_quando_sobrenome_recebe_charles_xavier_deve_retornar_xavier(self) -> None :
+
         entrada: str = 'Charles Xavier'  # Given - Contexto
         esperado: str = 'Xavier'
         charles_xavier: object = Funcionario(entrada, '10/03/1932', 10000)  # When - Ação
