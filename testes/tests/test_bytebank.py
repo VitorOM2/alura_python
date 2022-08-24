@@ -3,7 +3,7 @@ from testes.bytebank import Funcionario
 
 class TestClass:
 
-    def test_quando_idade_recebe_13_03_2000_deve_retornar_22(self) -> None :
+    def test_quando_idade_recebe_13_03_2000_deve_retornar_22(self) -> None:
         entrada: str = '13/03/2000'  # Given - Contexto
         esperado: int = 22
         funcionario_teste: object = Funcionario('Teste', entrada, 1111)  # When - Ação
@@ -30,4 +30,13 @@ class TestClass:
 
         resultado: float = funcionario_teste.salario
 
+        assert resultado == esperado
+
+    def test_quando_calcular_bonus_recebe_1000_deve_retornar_100(self) -> None:
+        entrada: float = 1000
+        esperado: float = 100
+
+        funcionario_teste = Funcionario('teste', '01/01/2001', entrada)
+
+        resultado: float = funcionario_teste.calcular_bonus()
         assert resultado == esperado
