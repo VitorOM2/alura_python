@@ -27,6 +27,6 @@ class TestClass:
         funcionario_teste: object = Funcionario(entrada_nome, '11/11/2000', entrada_salario)
         funcionario_teste.decrescimo_salario()
 
-        resultado: float = funcionario_teste.salario()
+        resultado: float = funcionario_teste.salario
 
         assert resultado == esperado
