@@ -1,9 +1,9 @@
-from bytebank import Funcionario
+from testes.bytebank import Funcionario
 
 
 class TestClass:
 
-    def test_quando_idade_recebe_13_03_2000_deve_retornar_22(self) -> None :
+    def test_quando_idade_recebe_13_03_2000_deve_retornar_22(self) -> None:
         entrada: str = '13/03/2000'  # Given - Contexto
         esperado: int = 22
         funcionario_teste: object = Funcionario('Teste', entrada, 1111)  # When - Ação
@@ -11,9 +11,7 @@ class TestClass:
 
         assert resultado == esperado  # Then - Desfecho
 
-    def test_quando_sobrenome_recebe_charles_xavier_deve_retornar_xavier(self) -> None :
-    
-    def test_quando_sobrenome_recebe_charles_xavier_deve_retornar_xavier(self) -> None :
+    def test_quando_sobrenome_recebe_charles_xavier_deve_retornar_xavier(self) -> None:
 
         entrada: str = 'Charles Xavier'  # Given - Contexto
         esperado: str = 'Xavier'
